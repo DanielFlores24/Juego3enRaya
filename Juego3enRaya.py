@@ -120,6 +120,12 @@ def TextoDeLaCaja():
                 elif botones[2]["text"] == botones[4]["text"] == botones[6]["text"] != " ":
                     ganador = botones[2]["text"]
 
+                #Conversion de X a usuario1 y de O a usuario2
+                if ganador == "X":
+                    ganador = usuario1
+                elif ganador == "O":
+                    ganador = usuario2
+
                  #Puntuaciones
                 if ganador == usuario1:
                     juego.victorias_jugador1 += 1
@@ -155,7 +161,7 @@ def TextoDeLaCaja():
             if ganador == "El juego a quedado en empate":
                 textoFinal = ganador
             else:
-                textoFinal = f"{ganador} a ganado"
+                textoFinal = f"{ganador} a ganado la partida"
             etiquetaFinal = tk.Label(ventanaFinal, text=textoFinal, bg=COLOR_ETIQUETA, fg=COLOR_TEXTO_BOTON)
             etiquetaFinal.pack()
             etiquetaVolveraJugar = tk.Label(ventanaFinal, text="Quieren volver a jugar?", bg=COLOR_FONDO, fg=COLOR_TEXTO_BOTON)
